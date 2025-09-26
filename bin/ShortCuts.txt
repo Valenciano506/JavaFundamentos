@@ -1,0 +1,2 @@
+crtl + shift + o es para importar las clases automáticamente
+crtl + shift + f es para formatear un archivo de java
