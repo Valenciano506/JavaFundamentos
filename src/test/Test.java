@@ -2,7 +2,8 @@ package test;
 
 import oopmodeling.Star;
 
-public class Test {public static void main(String[] args) {
+public class Test {
+	public static void main(String[] args) {
 	System.out.println("Panadería de pan");
 	int num1 = 2001;
 	int num2 = 2006;

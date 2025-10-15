@@ -113,7 +113,7 @@ public class ArrayTest {
 		
 	}
 
-	private static void switchvalues(int[] arr, int index1, int index2) {
+	public static void switchvalues(int[] arr, int index1, int index2) {
 		
 		if(arr == null) {
 			return;
