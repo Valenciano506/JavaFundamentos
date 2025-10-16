@@ -1,26 +1,32 @@
 package test;
 
+import oopmodeling.Planet;
 import oopmodeling.Star;
 
-public class Test {
-	public static void main(String[] args) {
-	System.out.println("Panadería de pan");
-	int num1 = 2001;
-	int num2 = 2006;
-	System.out.println("Panchitos Fuera");
-	Star sunStar = new Star();
-	Star marteStar = new Star();
-	Planet marte= new Planet();
-	Planet saturno= new Planet();
+public class Test {public static void main(String[] args) {
+	System.out.println(150);
+	int num1 = 2005;
+	int num2 = 2007;
 	
-	//Cambiar la masa y nombre de una instancia de la clase estrella
-	sun.setMass(23423);
-	sun.setName("234")
-	System.out.println("the mass of the sun is" + sun.getMass() );
-	//java.lang.NullPointerException
+	System.out.println(num1 + num2);
+	Star sun = new Star();
+	Planet mars = new Planet();
+	Planet saturno = new Planet();
+	Planet jupiter = new Planet();
+	System.out.println(sun.mass);
+	mars.setMass(324234);
+	saturno.setName("planeta2");
+	System.out.println("the name of the planet is " + saturno.getName());
+	
+	jupiter.setSize(1000);
+	
+	System.out.println("the size of the planet is " + jupiter.getSize());
+	
 	Star utus = null;
-	System.out.println("the mass of the utus is" + utus.getMass() );
+	//== Es el operador de comparación
+	if (utus == null) {
+		return;
+	}
 	
 }
-	
 }
