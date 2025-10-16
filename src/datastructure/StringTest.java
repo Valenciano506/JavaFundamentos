@@ -28,6 +28,7 @@ public class StringTest {
 		
 		char[] characters = SQL.toCharArray();
 		String sum = "";
+		
 		for (char character : characters) {
 			//System.out.println("The current character is " + character);
 			//Relational operator of inequality is "!=" "no igual"

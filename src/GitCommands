@@ -7,7 +7,7 @@ Comandos para subirlo a git:
 	git add src
 	
 	//update all changes from our project to the local repository
-	git commits -m "mensaje"
+	git commit -m "mensaje"
 	
 	//associate local repository with a remote one 
 	git remote add origin "https://...."
