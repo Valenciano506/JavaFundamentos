@@ -114,23 +114,22 @@ public class ArrayTest {
 	}
 
 	public static void switchvalues(int[] arr, int index1, int index2) {
-		
-		if(arr == null) {
-			return;
-		}	
-		if(index1 < 0 || index2 < 0) {
-			return;
-		}
-		
-		if(index1 >= arr.length || index2 >= arr.length) {
-			 
-		}
-		
-		int dato = arr[index1];
-		arr[index1] = arr[index2];
-		arr[index2] = dato;
-		
-	}
+
+        if(arr == null) {
+            return;
+        }
+        // >= means greater or equal
+        //The index of the last element in an array is arr.lenght -1
+        if(index1 >= arr.length|| index2 >= arr.length) {
+            return;
+        }
+        //if(arr.length)
+        int dato= arr [index1];
+        arr[index1] = arr[index2];
+        arr[index2] = dato;
+
+
+    }
 
 	private static void sumup() {
 		int[] scores = { 12, 34, 3423, 32 };

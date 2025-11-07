@@ -1,32 +1,52 @@
 package oopmodeling;
 
-import test.CelestialBody;
-
 public class Planet extends CelestialBody {
-	/**
-	 * 
-	 */
-	float mass = 25;
-	float size = 50;
-	String name = "Panfleto";
+
+    //Constructors used to create objects of the class Planet
+
+    //Constructor vacío que no hace nada
+    public Planet(){
+        super();
+    }
+
+    //Contructor con 2 parámetros
+    public Planet(double mass, String nameOf){
+
+        super(nameOf);
+        name = nameOf;
+        this.mass = mass;
+
+    }
+
+    //Contructor con 3 parámetros
+    public Planet(double mass, String name, float radius){
+
+        super(mass, name);
+        this.mass = mass;
+        this.name = name;
+        this.radius = radius;
+
+    }
+
+
 	public void setMass(int i) {
-		// TODO Auto-generated method stub
-		
+
+
 	}
 	public void setName(String string) {
-		// TODO Auto-generated method stub
+
 		
 	}
 	public void setSize(int i) {
-		// TODO Auto-generated method stub
+
 		
 	}
 	public String getName() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 	public String getSize() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 }
