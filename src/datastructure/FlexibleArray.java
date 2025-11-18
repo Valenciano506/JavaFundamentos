@@ -17,8 +17,13 @@ public class FlexibleArray<T>{
 
     //The variable to store how many elements we have added to the array
     private int size = 0;
+    private static final int EXPANSION_FACTOR = 40;
     public FlexibleArray(int size){
-        elements = (T[]) new Object[INITIAL_CAPACITY];
+    	if(size <= 0) {
+    		size = INITIAL_CAPACITY;
+    	}
+    	//create an array of objects
+        elements = (T[]) new Object[size];
     }
 
     /*
@@ -35,7 +40,20 @@ public class FlexibleArray<T>{
     public void add(T e) {
         //paso 0: check if we have reached to the last position,
         //if true, we have to expand the capacity of the array
+    	if(size == elements.length) {//The array is full, we have to extend its capacity    		
+    		//First, we create a new array with mayor capacity
+    		T[] newArr = (T[])new Object[elements.length + EXPANSION_FACTOR];
+    		// copy the elements from the old array to the new one
+    		//newArr[0] = elements[1]
+    		//newArr[0] = elements[1]
+    		for(int i = 0; i < elements.length; i++) {
+    			newArr[i] = elements[i];
+    		}
+    		elements = newArr;
+    	}
         //paso 1: add the element to the last position of the array
+    	elements[size] = e;
+    	size++;
         //paso 2:
     }
 
@@ -44,9 +62,14 @@ public class FlexibleArray<T>{
      */
 
     public void remove(int i) {
+    	//Step 1: eliminate the element at position passed by the parameter
+    	elements[i] = null;
+    	elements[i] = elements[i + 1];
+    	elements[i + 1] = elements[i + 2];
+    	size--;
     }
 
     public int size() {
-        return 0;
+        return size;
     }
 }
