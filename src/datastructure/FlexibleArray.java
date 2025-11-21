@@ -64,8 +64,16 @@ public class FlexibleArray<T>{
     public void remove(int i) {
     	//Step 1: eliminate the element at position passed by the parameter
     	elements[i] = null;
-    	elements[i] = elements[i + 1];
-    	elements[i + 1] = elements[i + 2];
+//    	elements[i] = elements[i + 1];
+//    	elements[i + 1] = elements[i + 2];
+//    	elements[i + 2] = elements[i + 3];
+//    	elements[i + 3] = elements[i + 4];
+    	//...
+    	
+    	for (int j = 0; j < 5; j++) {
+			T e = elements[j];
+		}
+    	
     	size--;
     }
 
