@@ -6,10 +6,15 @@ import java.util.Random;
 
 import oopmodeling.Planet;
 
+/*
+ *Comments about advantages and disadvantages of an array 
+ */
+
 public class ArrayTest {
 
 	public static void main(String[] args) {
 		String[] names = { "Pablo", "Juan"};
+		System.out.println(names);
 		Planet[] planet = { new Planet(), new Planet() };
 		int[] numeros1 = {47, 50, 37, 85};
 		int[] patatas = {67, 83, 29, 42};
