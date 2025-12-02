@@ -1,0 +1,21 @@
+Comandos para subirlo a git:
+
+	//create a local repository
+	git init
+	
+	//stage or mark all files under de "src" folder that are new ones or are modified
+	git add src
+	
+	//update all changes from our project to the local repository
+	git commit -m "mensaje"
+	
+	//associate local repository with a remote one 
+	git remote add origin "https://...."
+	
+	//update all changes from the local repository to the remote repository
+	git push -u origin master
+	git push -u origin main
+	git push 
+	
+	//check the current status of a repository
+	git status
