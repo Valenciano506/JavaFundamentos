@@ -34,6 +34,7 @@ public class AdressBook {
 			if (contacts.get(i).getName().equals(name)) {
 				contacts.remove(i);
 				return true;
+				//ssdsd
 			}
 		}
 		//2. Remove the contact by its position in the array
