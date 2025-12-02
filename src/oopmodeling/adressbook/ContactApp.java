@@ -75,7 +75,7 @@ public class ContactApp {
 	}
 	
 	private static void showContact() {
-		
+		adressBook.showContacts();
 	}
 	
 	private static void removeContact() {
@@ -88,6 +88,7 @@ public class ContactApp {
 		String nombre = scanner.nextLine();
 		System.out.println(nombre);
 		adressBook.removeContact(nombre);
+		System.out.println("Se ha eliminado correctamente el contacto " + nombre);
 		
 	}
 
