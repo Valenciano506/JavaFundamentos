@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>230</y>
+      <w>240</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>
+Package: oopmodeling.adressbook
+Class: ContactApp
+
+--
+
+-Contacts: FlexibleArray&lt;Contact&gt;
+
+--
+
+*#Operation(i: int): int*
+showMenu()
+addContact()
+showContact()
+removeContact()
+
+--
+*Responsibilities:*
+Interfaz que interacciona 
+directamente con el usuario 
+mediante un "scanner"</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>230</y>
+      <w>240</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>
+Package: oopmodeling.adressbook
+Class: Contact
+
+--
+
+phoneNumber
+name
+surename
+email
+
+--
+
+*#Operation(i: int): int*
+
+--
+*Responsibilities:*
+Esta es la clase en la que se crean 
+los constructores de los contactos</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>230</y>
+      <w>240</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>
+Package: oopmodeling.adressbook
+Class: Adressbook
+
+--
+
+-Contacts: FlexibleArray&lt;Contact&gt;
+
+--
+
+*#Operation(i: int): int*
+showContact()
+addContact()
+removeContact()
+
+
+--
+*Responsibilities:*
+Almacén donde se guardan todos 
+los contactos utilizando un 
+array flexible</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>500</x>
+      <y>160</y>
+      <w>60</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>
+fg=CYAN
+bg=MAGENTA</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>260</x>
+      <y>160</y>
+      <w>60</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>
+fg=MAGENTA
+bg=CYAN</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

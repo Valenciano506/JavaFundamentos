@@ -18,11 +18,14 @@ public class FileOperations {
 		
 		createPath(directory);
 		createFile(file);	
+		createAbsolutePath();
 		
+	}
+
+	private static void createAbsolutePath() {
 		//create absolute using absolute path
 		File absoluteDir = new File(System.getProperty("user.dir") + "/logs/user.log");
 		absoluteDir.mkdirs();
-		
 	}
 
 	private static void createPath(File file) {
