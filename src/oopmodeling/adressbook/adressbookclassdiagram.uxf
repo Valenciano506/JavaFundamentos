@@ -46,10 +46,10 @@ Class: Contact
 
 --
 
-phoneNumber
-name
-surename
-email
+phoneNumber - string
+name - string
+surename - string
+email - string
 
 --
 

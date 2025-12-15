@@ -1,6 +1,8 @@
 package javaio;
 
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /*
@@ -19,11 +21,38 @@ public class FileOperations {
 		createPath(directory);
 		createFile(file);	
 		createAbsolutePath();
+		writeFile();
+		readFile();
 		
 	}
 
+	private static void readFile() {		
+		try {
+			FileReader reader = new FileReader("log.txt");
+			System.out.println((char)reader.read());
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void writeFile() {
+		try {
+			FileWriter writer = new FileWriter("log.txt");
+			writer.write("Black big dildo");
+			writer.write("A Panblo le gusta el pene negro");
+			writer.write('Y');
+			//Close the writer and refresh the data to the file
+			writer.close();
+			//Refresh data we have written to the file
+			//writer.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	private static void createAbsolutePath() {
-		//create absolute using absolute path
+		//create directory using absolute path
 		File absoluteDir = new File(System.getProperty("user.dir") + "/logs/user.log");
 		absoluteDir.mkdirs();
 	}
