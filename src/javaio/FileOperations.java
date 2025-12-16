@@ -29,7 +29,21 @@ public class FileOperations {
 	private static void readFile() {		
 		try {
 			FileReader reader = new FileReader("log.txt");
-			System.out.println((char)reader.read());
+			System.out.print((char)reader.read());
+			
+			//check the condition first before executing the while body
+			char c = '1';
+			//If we have read "-1", the loop finishes
+			while ((c = (char)reader.read()) != -1) {
+				System.out.print(c);
+			}			
+			//Execute the commands inside the "do" body first, 
+			//then check the condition if it is true, repeat 
+			//the execution			
+			do {
+				System.out.print((char)reader.read());
+			}			
+			while (true);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
