@@ -32,18 +32,25 @@ public class FileOperations {
 			System.out.print((char)reader.read());
 			
 			//check the condition first before executing the while body
-			char c = '1';
+			int c;
+			System.out.println((char) -1 == -1);
 			//If we have read "-1", the loop finishes
-			while ((c = (char)reader.read()) != -1) {
-				System.out.print(c);
-			}			
+			while ((c = reader.read()) != -1) {
+				System.out.print((char)c);
+			}		
+			reader.close();
+			reader = new FileReader("log.txt");
 			//Execute the commands inside the "do" body first, 
 			//then check the condition if it is true, repeat 
-			//the execution			
+			//the execution	
+			c = 0;
+			System.out.println("El valor de c es " + c);
 			do {
-				System.out.print((char)reader.read());
+				c = reader.read();
+				System.out.print((char)c);
 			}			
-			while (true);
+			while (c != -1);
+			reader.close();
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -53,8 +60,8 @@ public class FileOperations {
 	private static void writeFile() {
 		try {
 			FileWriter writer = new FileWriter("log.txt");
-			writer.write("Black big dildo");
-			writer.write("A Panblo le gusta el pene negro");
+			writer.write("Black big dildo ");
+			writer.write("A Panblo le gusta el pene negro ");
 			writer.write('Y');
 			//Close the writer and refresh the data to the file
 			writer.close();
