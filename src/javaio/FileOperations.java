@@ -1,5 +1,7 @@
 package javaio;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -23,23 +25,64 @@ public class FileOperations {
 		createAbsolutePath();
 		writeFile();
 		readFile();
+		bufferedRead();
+		bufferedWrite();
 		
+	}
+
+	private static void bufferedWrite() {
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter("contacts.txt"));
+			writer.write("Manolo" + ";" + " manu@G");
+			writer.newLine();
+			writer.write("Panblo" + ";" + " pab@G");
+			writer.newLine();
+			//writer.flush();
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void bufferedRead() {
+		try {
+			System.out.println("Buffered reader");
+			BufferedReader br = new BufferedReader(new FileReader("log.txt"));
+			System.out.println(br.readLine());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println();
 	}
 
 	private static void readFile() {		
 		try {
 			FileReader reader = new FileReader("log.txt");
-			System.out.print((char)reader.read());
+			//System.out.print((char)reader.read());
 			
 			//check the condition first before executing the while body
 			int c;
-			System.out.println((char) -1 == -1);
+			//System.out.println((char) -1 == -1);
+			System.out.println("\n Primera lectura");
 			//If we have read "-1", the loop finishes
 			while ((c = reader.read()) != -1) {
 				System.out.print((char)c);
 			}		
 			reader.close();
+			
 			reader = new FileReader("log.txt");
+			System.out.println("\n \n Segunda lectura");
+			//read a character from the file
+			c = reader.read();
+			while(c != -1) { //check if we have reached the end of the file
+				//haven't reached the end
+				System.out.print((char)c);
+				c = reader.read();
+			}
+			reader.close();
+			
+			reader = new FileReader("log.txt");
+			System.out.println("\n \n Tercera lectura");
 			//Execute the commands inside the "do" body first, 
 			//then check the condition if it is true, repeat 
 			//the execution	
