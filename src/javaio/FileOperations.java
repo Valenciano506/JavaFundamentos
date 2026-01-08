@@ -1,5 +1,4 @@
 package javaio;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,12 +24,12 @@ public class FileOperations {
 		createAbsolutePath();
 		writeFile();
 		readFile();
-		bufferedRead();
-		bufferedWrite();
+		bufferedReader();
+		bufferedWriter();
 		
 	}
 
-	private static void bufferedWrite() {
+	private static void bufferedWriter() {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter("contacts.txt"));
 			writer.write("Manolo" + ";" + " manu@G");
@@ -44,11 +43,25 @@ public class FileOperations {
 		}
 	}
 
-	private static void bufferedRead() {
+	private static void bufferedReader() {
 		try {
+			System.out.println();
 			System.out.println("Buffered reader");
-			BufferedReader br = new BufferedReader(new FileReader("log.txt"));
-			System.out.println(br.readLine());
+			//wrap an instance of @link{FileReader} in an instance of @link{BufferedReader}
+			//so we can manipulate the data in another way in our case reading the data line by line
+			BufferedReader br = new BufferedReader(new FileReader("contacts.txt"));
+			//read a line from the file
+			//System.out.println(br.readLine());		
+			String data;
+			do {
+				//define what we want to do
+				//read a line
+				data =  br.readLine();
+				System.out.println(data);
+				data.split(";");
+			}
+			while(data != null);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
