@@ -1,5 +1,6 @@
 package oopmodeling.adressbook;
 import datastructure.FlexibleArray;
+import utils.FileUtil;
 
 /*
  * This class is used to manage a list of contacts objects
@@ -27,6 +28,7 @@ public class AdressBook {
 	
 	public void addContact(Contact contact) {
 		contacts.add(contact);
+		FileUtil.writeToFile(contact.getName() + ";" + contact.getEmail(), "contacts.txt");
 	}
 	
 	public boolean removeContact(String name) {
