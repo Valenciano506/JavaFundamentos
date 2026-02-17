@@ -48,7 +48,10 @@ public class List<E> {
 	}
 	
 	public void printList() {
-		
+		System.out.println(first.getData());
+		System.out.println(first.getNext().getData());
+		System.out.println(first.getNext().getNext().getData());
+		System.out.println(first.getNext().getNext().getNext().getData());
 	}
 
 }
@@ -62,5 +65,29 @@ class Node<E> {
 	private E data;
 	//Each node needs to pint to the next node, we use this variable to do it
 	protected Node<E> next;
+	/**
+	 * @return the data
+	 */
+	public E getData() {
+		return data;
+	}
+	/**
+	 * @param data the data to set
+	 */
+	public void setData(E data) {
+		this.data = data;
+	}
+	/**
+	 * @return the next
+	 */
+	public Node<E> getNext() {
+		return next;
+	}
+	/**
+	 * @param next the next to set
+	 */
+	public void setNext(Node<E> next) {
+		this.next = next;
+	}
 	
 }
