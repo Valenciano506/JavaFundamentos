@@ -24,6 +24,7 @@ public class ListTest {
 		list.add(new Node(40));
 		list.add(new Node(50));
 		list.add(new Node(60));
+		list.add(new Node("patatas"));
 		
 		list.printList();
 
