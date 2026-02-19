@@ -14,7 +14,7 @@ public class ListTest {
 		System.out.println(obj1);
 		System.out.println(obj2);
 		
-		List<Integer> list = new List<Integer>();
+		ListImpl<Integer> list = new ListImpl<Integer>();
 		System.out.println("The first node of the list is: " + list.getFirst());
 		System.out.println("The last node of the list is: " + list.getLast());
 		//list.add(null);
