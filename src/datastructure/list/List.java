@@ -6,6 +6,11 @@ package datastructure.list;
 /*
  *Interface oriented development: we use interfaces to
  *abstract different solutions
+ *In an interface, you can declare methods, but without
+ *implementations, in other words, without method body,
+ *or only with the method signature (firma). As each method
+ *could have multiples different implementation in different
+ *class.
  *
  * @author Valenciano
  * 19 feb 2026

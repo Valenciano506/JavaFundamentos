@@ -2,10 +2,11 @@ package datastructure.list;
 
 /*
  *
+ *
  * @author Valenciano
  * 12 feb 2026
  */
-public class ListImpl<E> {	
+public class LinkedListImpl<E> implements List<E>{	
 	
 	//The reference to the last element in the list 
 	private Node<E> last;
@@ -30,12 +31,16 @@ public class ListImpl<E> {
 		
 	}
 	
-	public void add(Node<E> node) throws Exception {
+	public void add(E e) {
 		//1. Check the parameter if it is valid
-		if(node == null) {
-			throw new Exception("You cannot pass a null node to the list.");
+		if(e == null) {
+			try {
+				throw new Exception("You cannot pass a null node to the list.");
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
 		}
-		
+		Node<E> node = new Node(e);
 		//2. Add the node to the tail of the list
 		//2.1 Check first if the head element is null, in case of null, it means that the list is empty
 		if(first == null) {//If the list is empty
@@ -79,6 +84,30 @@ public class ListImpl<E> {
 			//Move to the next node
 			temp = temp.next;
 		}
+	}
+
+	@Override
+	public E remove(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public E removeFromTail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public E removeFromHead() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(E e, int position) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

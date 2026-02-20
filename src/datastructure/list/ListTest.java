@@ -14,17 +14,16 @@ public class ListTest {
 		System.out.println(obj1);
 		System.out.println(obj2);
 		
-		ListImpl<Integer> list = new ListImpl<Integer>();
+		LinkedListImpl<Integer> list = new LinkedListImpl<Integer>();
 		System.out.println("The first node of the list is: " + list.getFirst());
 		System.out.println("The last node of the list is: " + list.getLast());
 		//list.add(null);
-		list.add(new Node(30));
-		list.add(new Node(20));
-		list.add(new Node(10));
-		list.add(new Node(40));
-		list.add(new Node(50));
-		list.add(new Node(60));
-		list.add(new Node("patatas"));
+		list.add(30);
+		list.add(20);
+		list.add(10);
+		list.add(40);
+		list.add(50);
+		list.add(60);
 		
 		list.printList();
 

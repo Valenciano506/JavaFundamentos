@@ -7,6 +7,8 @@ package datastructure.list;
  */
 public class ArrayListImpl<E> implements List<E>{
 
+	private Object[] elements;
+	
 	@Override
 	public void add(E e) {
 		
