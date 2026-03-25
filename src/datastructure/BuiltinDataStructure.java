@@ -1,8 +1,10 @@
 package datastructure;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 import oopmodeling.Planet;
@@ -51,6 +53,18 @@ public class BuiltinDataStructure {
 		queue.add(12300);
 		//Poll is 
 		System.out.println(queue.poll());
+		Queue<String> printerTask = new LinkedList<String>();
+		printerTask.add("Task 1");
+		printerTask.add("Task 2");
+		printerTask.add("Task 3");
+		//We use the method "peek" to read the head element without remove it
+		System.out.println(printerTask.peek());
+		System.out.println(printerTask.poll());
+		TreeMap<String, Planet> tree;
+		HashMap<String, User> users = new HashMap<>();
+		users.put("Ana", new User());
+		users.put("Pablo", new User());
+		
 	}
 
 }
