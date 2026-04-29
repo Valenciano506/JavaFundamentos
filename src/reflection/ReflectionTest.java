@@ -14,11 +14,43 @@ import oopmodeling.adressbook.AdressBook;
 public class ReflectionTest {
 	
 	public static void main(String[] args) throws ClassNotFoundException {
+		//To load 
 		Class<AdressBook> cls = AdressBook.class;
 		Class<AdressBook> cls2 = (Class<AdressBook>) new AdressBook().getClass();
 		Class<?> cls3 = Class.forName("oopmodeling.adressbook.AdressBook");
 		
 		inspectClass(cls);
+		
+		AdressBook adressBook = new AdressBook();
+		manipulateObject(adressBook);
+		
+	}
+
+	private static void manipulateObject(AdressBook adressBook) {
+		
+		Class<?> cls = adressBook.getClass();
+		Field[] fields = cls.getDeclaredFields();
+		try {
+			Field field = cls.getDeclaredField("Contact");
+			System.out.println();
+			//Change the access modifier from private to public
+			field.setAccessible(true);
+			//Read the value of a specified field
+			System.out.println(field.get(adressBook));			
+			//Modify the value of a field of the object
+			field.set(adressBook, "12345");
+			System.out.println(field.get(adressBook));
+			
+		} catch (NoSuchFieldException e) {
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static void inspectClass(Class<AdressBook> cls) {
