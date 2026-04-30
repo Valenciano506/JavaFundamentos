@@ -2,6 +2,7 @@ package reflection;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import oopmodeling.adressbook.AdressBook;
@@ -24,6 +25,23 @@ public class ReflectionTest {
 		AdressBook adressBook = new AdressBook();
 		manipulateObject(adressBook);
 		
+		invokeMethodOfAnObject(adressBook);
+		
+	}
+
+	private static void invokeMethodOfAnObject(Object obj) {
+		
+		Class<?> cls = obj.getClass();
+		try {
+			Method method = cls.getDeclaredMethod("addContact", String.class);
+			method.invoke(obj, null);
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static void manipulateObject(AdressBook adressBook) {
@@ -31,6 +49,8 @@ public class ReflectionTest {
 		Class<?> cls = adressBook.getClass();
 		Field[] fields = cls.getDeclaredFields();
 		try {
+			//Potentially we may get a no such field exception
+			//We pass a filed name that does not exist
 			Field field = cls.getDeclaredField("Contact");
 			System.out.println();
 			//Change the access modifier from private to public
