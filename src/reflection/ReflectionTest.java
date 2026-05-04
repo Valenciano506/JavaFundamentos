@@ -27,6 +27,31 @@ public class ReflectionTest {
 		
 		invokeMethodOfAnObject(adressBook);
 		
+		invokeConstructorsOfAnObject(cls3);
+		
+	}
+
+	private static void invokeConstructorsOfAnObject(Class<?> cls3) {
+		
+		try {
+			cls3.getConstructor().newInstance();
+			Object obj = cls3.getConstructor().newInstance();
+			System.out.println(obj);
+			System.out.println(cls3.getConstructor().newInstance());
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	private static void invokeMethodOfAnObject(Object obj) {
@@ -34,7 +59,7 @@ public class ReflectionTest {
 		Class<?> cls = obj.getClass();
 		try {
 			Method method = cls.getDeclaredMethod("addContact", String.class);
-			method.invoke(obj, null);
+			method.invoke(obj, "sdf");
 		} catch (NoSuchMethodException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
